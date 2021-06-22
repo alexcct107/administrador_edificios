@@ -1,0 +1,25 @@
+<!-- Numero de departamento: <%= @apartment.number %>
+
+Nombre del Edificio:
+<%= @apartment.building.name %> -->
+
+<h1>Edificios y Departamentos</h1>
+
+<table>
+    <thead>
+        <tr>
+        <th>Numero del Departamento</th>
+        <th>Nombre del Edificio</th>
+        <th colspan="2"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td><%= @apartment.number %></td>
+            <td><%= @apartment.building %></td>
+        </tr>
+    </tbody>
+    </table>
+
+    <%= link_to 'New Apartment', new_apartment_path %>
