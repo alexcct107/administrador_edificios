@@ -1,3 +1,5 @@
+<p id="notice"> <%= notice %></p>
+
 <h1>Apartments</h1>
 
 <table>
@@ -12,12 +14,15 @@
     <tbody>
         <% @apartments.each do |apartment| %>
         <tr>
-        <td><%= apartment.number %></td>
-        <td><%= apartment.building %></td>
-        <td><%=link_to 'Show', apartment%></td>
-        </tr>
+            <td><%= apartment.number %></td>
+            <td><%= apartment.building %></td>
+            <td><%=link_to 'Show', building_apartment_path(@building, apartment)%></td>
+            <td><%= link_to 'Edit', edit_building_apartment_path(@building, apartment) %></td>
+            <td><%= link_to 'Destroy', building_apartment_path(@building, apartment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
         <% end %>
         </tbody>
         </table>
+        <br>
 
-        <%= link_to 'New Apartment', new_apartment_path %>
+        <%= link_to 'New Apartment', new_building_apartment_path %>

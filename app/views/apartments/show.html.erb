@@ -3,13 +3,15 @@
 Nombre del Edificio:
 <%= @apartment.building.name %> -->
 
+<p id="notice"><%= notice %></p>
+
 <h1>Edificios y Departamentos</h1>
 
 <table>
     <thead>
         <tr>
-        <th>Numero del Departamento</th>
-        <th>Nombre del Edificio</th>
+        <th><strong>Numero del Departamento</strong></th>
+        <th><strong>Nombre del Edificio</strong></th>
         <th colspan="2"></th>
         </tr>
     </thead>
@@ -22,4 +24,5 @@ Nombre del Edificio:
     </tbody>
     </table>
 
-    <%= link_to 'New Apartment', new_apartment_path %>
+    <%= link_to 'Edit', edit_building_apartment_path(@building, @apartment) %> |
+    <%= link_to 'Back', building_apartments_path(@building) %>
